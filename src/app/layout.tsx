@@ -5,6 +5,8 @@ import { Providers } from '@/providers'
 import { ToastContainer } from 'react-toastify'
 import Header from '@/Layouts/Header'
 import Footer from '@/Layouts/Footer'
+import ScrollToTop from '@/components/ScrollToTop'
+import RightMenu from '@/Layouts/RightMenu'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,7 +22,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ToastContainer />
         <Providers>
           <Header />
-          {children}
+          <div className='ct-container min-h-dvh w-full py-10'>
+            <div className='grid grid-cols-3 gap-20'>
+              <div className='col-span-2 flex flex-col gap-10'>{children}</div>
+              <RightMenu />
+            </div>
+          </div>
+
+          <ScrollToTop />
           <Footer />
         </Providers>
       </body>
