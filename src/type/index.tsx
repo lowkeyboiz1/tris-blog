@@ -6,3 +6,8 @@ export type TArticle = {} & TPost & {
     time: string
     urlTag: string
   }
+
+export type TBreadcrumbWithUrl = {
+  title: string
+  url?: string
+}

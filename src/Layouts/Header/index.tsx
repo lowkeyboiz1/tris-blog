@@ -10,7 +10,7 @@ import Divider from '@mui/material/Divider'
 import Driver from '@/components/Driver'
 
 import styles from './index.module.scss'
-import { Navbar, NavbarBrand } from '@nextui-org/react'
+import { Navbar } from '@nextui-org/react'
 
 function Header() {
   return (
@@ -18,10 +18,10 @@ function Header() {
       shouldHideOnScroll
       isBordered
       classNames={{
-        base: '*:max-w-none',
+        base: '*:max-w-none backdrop-blur-none data-[menu-open=true]:backdrop-blur-none backdrop-none bg-white *:px-0'
       }}
     >
-      <div className='ct-container w-full flex items-center justify-between h-[60px] px-6'>
+      <div className='ct-container flex h-[60px] w-full items-center justify-between px-6'>
         <Link href={'/'}>
           <p className='font-bold'>IELTS TRIS</p>
         </Link>
@@ -45,7 +45,7 @@ const RenderListMenu = () => {
     {
       id: 1,
       title: 'Home',
-      url: '/',
+      url: '/'
     },
     {
       id: 2,
@@ -55,14 +55,14 @@ const RenderListMenu = () => {
         {
           id: 8,
           title: 'Compare/Contrast',
-          url: '',
+          url: ''
         },
         {
           id: 9,
           title: 'Khang',
-          url: '',
-        },
-      ],
+          url: ''
+        }
+      ]
     },
     {
       id: 3,
@@ -72,35 +72,35 @@ const RenderListMenu = () => {
         {
           id: 10,
           title: 'Compare/Contrast',
-          url: '',
+          url: ''
         },
         {
           id: 11,
           title: 'Khang123',
-          url: '',
-        },
-      ],
+          url: ''
+        }
+      ]
     },
     {
       id: 4,
       title: 'Easy Essays',
-      url: '',
+      url: ''
     },
     {
       id: 5,
       title: 'About Me',
-      url: '',
+      url: ''
     },
     {
       id: 6,
       title: 'Hall Of Fame',
-      url: '',
+      url: ''
     },
     {
       id: 7,
       title: 'Courses',
-      url: '',
-    },
+      url: ''
+    }
   ]
 
   return (
@@ -134,25 +134,13 @@ const ItemMenuList = ({ menu }: { menu: any }) => {
             </div>
           </>
         )}
-        {menu?.children && (
-          <div className={styles.lisItem}>
-            {menu?.children.map((item: any, index: number) => (
-              <ItemMenu handleClose={handleClose} menuChildren={item} key={item.id} />
-            ))}
-          </div>
-        )}
+        {menu?.children && <div className={styles.lisItem}>{menu?.children.map((item: any, index: number) => <ItemMenu handleClose={handleClose} menuChildren={item} key={item.id} />)}</div>}
       </div>
     </>
   )
 }
 
-const ItemMenu = ({
-  handleClose,
-  menuChildren,
-}: {
-  handleClose: () => void
-  menuChildren: any
-}) => {
+const ItemMenu = ({ handleClose, menuChildren }: { handleClose: () => void; menuChildren: any }) => {
   return (
     <>
       <Link href={menuChildren.url}>

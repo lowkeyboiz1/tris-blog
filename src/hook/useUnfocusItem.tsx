@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 
-export const useUnfocusItem = (
+const useUnfocusItem = (
   callback: () => void,
   exclusionRef?: React.RefObject<HTMLElement | null>,
 ): React.RefObject<any> => {
@@ -32,3 +32,5 @@ export const useUnfocusItem = (
 
   return itemRef
 }
+
+export default useUnfocusItem

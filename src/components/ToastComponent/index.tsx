@@ -1,3 +1,5 @@
+'use client'
+
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -9,16 +11,10 @@ export const ToastComponent = ({
   closeOnClick,
   pauseOnHover,
   draggable,
-  type = 'default',
+  type = 'default'
 }: {
   message: string
-  position?:
-    | 'top-left'
-    | 'top-right'
-    | 'top-center'
-    | 'bottom-left'
-    | 'bottom-right'
-    | 'bottom-center'
+  position?: 'top-left' | 'top-right' | 'top-center' | 'bottom-left' | 'bottom-right' | 'bottom-center'
   autoClose?: number
   hideProgressBar?: boolean
   closeOnClick?: boolean
@@ -35,6 +31,6 @@ export const ToastComponent = ({
     pauseOnHover: pauseOnHover || true,
     draggable: draggable || true,
     progress: undefined,
-    type: type,
+    type: type
   })
 }

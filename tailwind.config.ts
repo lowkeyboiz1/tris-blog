@@ -9,36 +9,32 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
     extend: {
-      colors: colorsConfig,
+      colors: colorsConfig
     },
     screens: {
       xs: '475px',
       '13inch': '1350px',
       '2xxl': '1700px',
       '3xl': '1940px',
-      ...defaultTheme.screens,
-    },
+      ...defaultTheme.screens
+    }
   },
   darkMode: 'class',
   plugins: [
     nextui({
       themes: {
         light: {
-          colors: {
-
-          },
+          colors: {}
         },
         dark: {
-          colors: {
-          
-          },
-        },
-      },
-    }),
-  ],
+          colors: {}
+        }
+      }
+    })
+  ]
 }
 export default config
